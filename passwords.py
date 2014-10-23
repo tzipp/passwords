@@ -29,15 +29,34 @@ def generate_password(password_length, char_pool):
         generator = random.seed()
 
     password = ''
-    for i in range(password_length):
+    for i in range(int(password_length)):
         random_position = generator.randrange(len(char_pool))
         password += char_pool[random_position]
     return password
 
 # print(generate_password(12, build_pool(True, True, True, True)))
 
+def parse_bool(decision):
+    if "y" in decision.lower():
+        return True
+    else:
+        return False
+
 def main():
-    print(generate_password(8, build_pool(True, True, True, True)))
+    password_length = input("Enter the length of the password: ")
+
+    print("Choose character sets to use for random password generation.")
+    use_alpha_lower = parse_bool(input("Use lowercase letters? (y/n): "))
+    use_alpha_upper = parse_bool(input("Use uppercase letters? (y/n): "))
+    use_digits = parse_bool(input("Use digits? (y/n): "))
+    use_symbols = parse_bool(input("Use symbols? (y/n): "))
+
+    if use_alpha_lower or use_alpha_upper or use_digits or use_symbols:
+        print(generate_password(password_length, build_pool(use_alpha_lower, use_alpha_upper, use_digits, use_symbols)))
+
+    else:
+        print("You didn't select any character pools! Try again!")
+        main()
 
 if __name__ == '__main__':
     main()
