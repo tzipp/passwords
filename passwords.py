@@ -21,6 +21,7 @@ print ("Use integer: ", build_pool(False, False, True, False))
 print ("Use symbols: ", build_pool(False, False, False, True))
 
 def generate_password(password_length, char_pool):
+    "Generate a password from a specified password length and character pool."
     try:
         generator = random.SystemRandom()
     except NotImplementedError:
@@ -34,3 +35,4 @@ def generate_password(password_length, char_pool):
     return password
 
 print(generate_password(12, build_pool(True, True, True, True)))
+
