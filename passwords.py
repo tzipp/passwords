@@ -36,3 +36,9 @@ def generate_password(password_length, char_pool):
 
 # print(generate_password(12, build_pool(True, True, True, True)))
 
+def main():
+    print(generate_password(8, build_pool(True, True, True, True)))
+
+if __name__ == '__main__':
+    main()
+
