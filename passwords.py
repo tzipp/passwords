@@ -15,10 +15,10 @@ def build_pool(use_alpha_lower, use_alpha_upper, use_integer, use_symbols):
 
     return char_pool
 
-print("Use alpha lower: ", build_pool(True, False, False, False))
-print ("Use alpha upper: ", build_pool(False, True, False, False))
-print ("Use integer: ", build_pool(False, False, True, False))
-print ("Use symbols: ", build_pool(False, False, False, True))
+# print("Use alpha lower: ", build_pool(True, False, False, False))
+# print ("Use alpha upper: ", build_pool(False, True, False, False))
+# print ("Use integer: ", build_pool(False, False, True, False))
+# print ("Use symbols: ", build_pool(False, False, False, True))
 
 def generate_password(password_length, char_pool):
     "Generate a password from a specified password length and character pool."
@@ -34,5 +34,5 @@ def generate_password(password_length, char_pool):
         password += char_pool[random_position]
     return password
 
-print(generate_password(12, build_pool(True, True, True, True)))
+# print(generate_password(12, build_pool(True, True, True, True)))
 
