@@ -31,8 +31,7 @@ def generate_password(password_length, char_pool):
 
     password = ''
     for i in range(int(password_length)):
-        random_position = generator.randrange(len(char_pool))
-        password += char_pool[random_position]
+        password += generator.choice(char_pool)
     return password
 
 # print(generate_password(12, build_pool(True, True, True, True)))
